@@ -110,6 +110,35 @@ public class Rate implements Serializable,Comparable<Rate>{
 		return "Rate [id=" + id + ", stayDateFrom=" + stayDateFrom + ", stayDateTo=" + stayDateTo + ", nights=" + nights
 				+ ", value=" + value + ", closedDate=" + closedDate + "]\n";
 	}
+
+	public Rate(int id, LocalDate stayDateFrom, LocalDate stayDateTo, int nights, int value, int bungalowId,
+			LocalDate closedDate) {
+		super();
+		this.id = id;
+		this.stayDateFrom = stayDateFrom;
+		this.stayDateTo = stayDateTo;
+		this.nights = nights;
+		this.value = value;
+		this.bungalowId = bungalowId;
+		this.closedDate = closedDate;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		Rate objRate = (Rate)obj;
+		return id==objRate.getId() 
+				&& nights == objRate.getNights()
+				&& value == objRate.getValue()
+				&& bungalowId == objRate.getBungalowId()
+				&& stayDateFrom.isEqual(objRate.getStayDateFrom())
+				&& stayDateTo.isEqual(objRate.getStayDateTo());
+			//	&& closedDate.isEqual(objRate.getClosedDate());
+	}
+	
+	@Override
+	public int hashCode() {
+		return id+nights+value+bungalowId+stayDateFrom.hashCode()+stayDateTo.hashCode();
+	}
 	
 
 	

@@ -169,6 +169,7 @@ public class RateService {
 		
 		//COREMR CASE
 		if(affectedRatesList.size()==1 && newGeneratedRatesList.size()==3) {
+			System.out.println("into corner case");
 			//SAVE TO DB
 			newGeneratedRatesList.forEach((r)->{
 				rateRepo.save(r);

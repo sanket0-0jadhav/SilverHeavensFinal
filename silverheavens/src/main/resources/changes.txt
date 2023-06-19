@@ -1,0 +1,7 @@
+//if(firstSegment.getStayDateTo().isAfter(firstSegment.getStayDateFrom())) {
+if(!firstSegment.getStayDateTo().isBefore(firstSegment.getStayDateFrom())) {
+			
+//if(lastSegment.getStayDateTo().isAfter(lastSegment.getStayDateFrom())) {
+if(!lastSegment.getStayDateTo().isBefore(lastSegment.getStayDateFrom())) {
+
+--> CHANGED ON 19-06-2023 case by mayur 2-4  9-12  +3-9

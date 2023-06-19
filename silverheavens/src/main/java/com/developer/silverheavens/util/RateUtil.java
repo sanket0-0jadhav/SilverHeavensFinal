@@ -113,9 +113,7 @@ public class RateUtil {
 		dataForDB.addAll(mergableRateList);
 		Collections.sort(dataForDB);
 		int i=0;
-		/*
-		 * TODO - IF NEXT = NEW REMOVE/CLOSE
-		 * */
+		
 		while(i<dataForDB.size()) {
 			//if next not available stop
 			if(i+1>=dataForDB.size()) {
@@ -170,7 +168,6 @@ public class RateUtil {
 		//if any matches, redundant
 		return rateOptional.isPresent();
 	}
-	
 	
 	//shrink
 	private static Rate shrinkAffected(Rate affected,Rate generated,boolean isFromSame) {

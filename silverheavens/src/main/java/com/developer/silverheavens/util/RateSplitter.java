@@ -105,7 +105,8 @@ public class RateSplitter {
 			firstSegment.setBungalowId(newRate.getBungalowId());
 			firstSegment.setClosedDate(null);
 			
-			if(firstSegment.getStayDateTo().isAfter(firstSegment.getStayDateFrom())) {
+			//if(firstSegment.getStayDateTo().isAfter(firstSegment.getStayDateFrom())) {
+			if(!firstSegment.getStayDateTo().isBefore(firstSegment.getStayDateFrom())) {
 				result.add(firstSegment);				
 			}
 		}
@@ -121,7 +122,8 @@ public class RateSplitter {
 			lastSegment.setBungalowId(newRate.getBungalowId());
 			lastSegment.setClosedDate(null);
 			
-			if(lastSegment.getStayDateTo().isAfter(lastSegment.getStayDateFrom())) {
+			//if(lastSegment.getStayDateTo().isAfter(lastSegment.getStayDateFrom())) {
+			if(!lastSegment.getStayDateTo().isBefore(lastSegment.getStayDateFrom())) {
 				result.add(lastSegment);				
 			}
 			
